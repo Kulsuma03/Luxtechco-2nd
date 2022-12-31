@@ -14,7 +14,7 @@ function App() {
   const url = 'https://jsonplaceholder.typicode.com/users'
   const data = useFetch(url);
   const newData = useFilter(data.data, searchKey)
-  console.log(newData);
+ 
   
   return (
       <div>
@@ -28,7 +28,7 @@ function App() {
           </div>
 
           {data.loading && <Loading></Loading>}
-          {(newData.length === 0) && <p className='my-5 text-danger fs-2'>No Matching Views</p>}
+          {(newData?.length === 0) && <p className='my-5 text-danger fs-2'>No Matching Views</p>}
 
           <Row >
               {
